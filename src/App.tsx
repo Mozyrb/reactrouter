@@ -9,6 +9,7 @@ import Email from "./pages/Email.tsx";
 
 const App: React.FC = () => {
 
+    console.log(123)
     return (
         <>
             <BrowserRouter>
