@@ -1,7 +1,7 @@
 import React from 'react';
 import {loremIpsum} from "lorem-ipsum";
 
-const Email:React.FC = () => {
+export const Email:React.FC = () => {
     return (
         <div>
             {loremIpsum({count:20})}
@@ -9,4 +9,3 @@ const Email:React.FC = () => {
     );
 };
 
-export default Email;
