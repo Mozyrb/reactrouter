@@ -14,24 +14,10 @@ export const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home/>,
-                errorElement:<div>error</div>
             },
             {
                 path: "/1",
-                children: [
-                    {
-                        index:true,
-                        element:<Page1/>
-                    },
-                    {
-                        path:"about",
-                        element:<About/>,
-                    },
-                    {
-                        path:"email",
-                        element:<Email/>
-                    },
-                ]
+                element:<Page1/>,
             },
             {
                 path:'/2',
@@ -39,6 +25,13 @@ export const router = createBrowserRouter([
             }
         ]
     },
-
+    {
+        path:"/1/about",
+        element:<About/>,
+    },
+    {
+        path: "/1/email",
+        element: <Email/>,
+    }
 ]);
 
