@@ -7,30 +7,36 @@ import {Page2} from "../pages/Page2.tsx";
 import {DefaultLayout} from "../layout/defaultLayout.tsx";
 
 
+
+
+
 export const router = createBrowserRouter([
+
 
     {   element: <DefaultLayout/>,
         children: [
             {
                 path: "/",
                 element: <Home/>,
-                errorElement:<div>error</div>
             },
             {
                 path: "/1",
-                children: [
-                    {
-                        index:true,
-                        element:<Page1/>
-                    },
+                element:<Page1/>,
+                children:[
                     {
                         path:"about",
                         element:<About/>,
+                        children:[
+                            {
+                                path:':someParam',
+                                element:<About/>
+                            }
+                        ]
                     },
                     {
-                        path:"email",
-                        element:<Email/>
-                    },
+                        path: "email",
+                        element: <Email/>,
+                    }
                 ]
             },
             {
@@ -38,7 +44,6 @@ export const router = createBrowserRouter([
                 element:<Page2/>
             }
         ]
-    },
-
+    }
 ]);
 
