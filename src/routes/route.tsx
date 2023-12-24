@@ -7,7 +7,11 @@ import {Page2} from "../pages/Page2.tsx";
 import {DefaultLayout} from "../layout/defaultLayout.tsx";
 
 
+
+
+
 export const router = createBrowserRouter([
+
 
     {   element: <DefaultLayout/>,
         children: [
@@ -18,20 +22,28 @@ export const router = createBrowserRouter([
             {
                 path: "/1",
                 element:<Page1/>,
+                children:[
+                    {
+                        path:"about",
+                        element:<About/>,
+                        children:[
+                            {
+                                path:':someParam',
+                                element:<About/>
+                            }
+                        ]
+                    },
+                    {
+                        path: "email",
+                        element: <Email/>,
+                    }
+                ]
             },
             {
                 path:'/2',
                 element:<Page2/>
             }
         ]
-    },
-    {
-        path:"/1/about",
-        element:<About/>,
-    },
-    {
-        path: "/1/email",
-        element: <Email/>,
     }
 ]);
 
